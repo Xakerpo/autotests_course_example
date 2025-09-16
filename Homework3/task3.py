@@ -3,7 +3,6 @@
 
 def even_sum(lst):
     # Здесь пишем код
-
     sum_list = 0
     for x in lst:
         if lst.index(x) % 2 == 0:
