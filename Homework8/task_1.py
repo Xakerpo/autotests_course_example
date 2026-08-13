@@ -18,19 +18,22 @@ import unittest  # Не удалять
 
 # Здесь пишем код
 
-def treatment_sum(our_tuple):
-    try:
-        if len(our_tuple) == 2:
-            return our_tuple[0] + our_tuple[1]
-        elif len(our_tuple) < 2:
-            raise IndexError('Недостаточно данных')
-        else:
-            raise Exception('Много данных')
-    except (IndexError, TypeError) as e:
-        if (isinstance(e, IndexError)) and str(e) == 'Недостаточно данных':
-            return 'Недостаточно данных'
-        else:
-            return 'Нельзя сложить эти данные'
+our_tuple = tuple(input('Введите элементы кортежа: '))
+lenght = len(our_tuple)
+print(lenght)
+sum = 0
+if lenght == 2:
+	try:
+		for digit in our_tuple:
+			sum += int(digit)
+		print(sum)
+	except ValueError:
+		print('Нельзя сложить эти данные')
+if lenght < 2:
+	print('Недостаточно данных')
+else:
+	print('Много данных')
+return
 
 
 
